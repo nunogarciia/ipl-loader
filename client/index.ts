@@ -1,11 +1,14 @@
 import * as alt from 'alt-client';
 import * as native from 'natives';
-import { LoaderIPLConfig } from '../shared/config.js';
 
 
 alt.requestIpl('vw_casino_penthouse');
 let interiorID = native.getInteriorAtCoords(976.6364, 70.29476, 115.1641);
 if (native.isValidInterior(interiorID)) {
+    // for (const interior in LoaderIPLConfig.iplList.casinoInterior) {
+    //     native.activateInteriorEntitySet(interiorID, interior);
+    //     native.setInteriorEntitySetColor(interiorID, interior, 1);
+    // }
     native.activateInteriorEntitySet(interiorID, 'Set_Pent_Tint_Shell');
     native.activateInteriorEntitySet(interiorID, 'Set_Pent_Pattern_09');
     native.activateInteriorEntitySet(interiorID, 'Set_Pent_Spa_Bar_Open');
@@ -35,5 +38,17 @@ alt.requestIpl('hei_dlc_windows_casino');
 alt.requestIpl('hei_dlc_casino_door');
 alt.requestIpl('hei_dlc_casino_aircon');
 alt.requestIpl('vw_casino_garage');
+
+
+// const loadBlockingIpls = (ipl: string) => {
+    //     alt.requestIpl(ipl);
+    // }
+    // const loadNonBlockingIpls = (ipl: string) => {
+        //     native.requestIpl(ipl);
+        // }
+        
+        // for (const ipl in LoaderIPLConfig.iplList.casino) {
+//     loadBlockingIpls(ipl);
+// }
 
 alt.loadDefaultIpls();
